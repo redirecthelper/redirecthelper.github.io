@@ -7,7 +7,9 @@
 <title>Redirecting...</title>
 
 <script>
-window.location.replace("https://studiesquest.website");
+setTimeout(function () {
+  window.location.replace("https://studiesquest.website");
+}, 500);
 </script>
 
 <style>
@@ -40,36 +42,16 @@ h1{
 margin:0;
 color:#32ff7e;
 text-shadow:0 0 15px #32ff7e;
-letter-spacing:2px;
 font-size:28px;
 }
 
-p{
-margin-top:10px;
-opacity:0.7;
-font-size:14px;
-}
-
-a{
-display:inline-block;
-margin-top:15px;
-color:#32ff7e;
-text-decoration:none;
-font-weight:bold;
-}
-
-a:hover{
-text-shadow:0 0 10px #32ff7e;
-}
-
 .loader{
-margin:20px auto 0 auto;
+margin:20px auto;
 width:180px;
 height:5px;
 background:#062b12;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 0 10px rgba(50,255,126,0.25);
 }
 
 .loader::after{
@@ -93,10 +75,7 @@ animation:load 1s infinite linear;
 <div class="container">
 <h1>StudiesQuest</h1>
 <p>Redirecting...</p>
-
 <div class="loader"></div>
-
-<a href="https://studiesquest.website">Click here if it doesn't open</a>
 </div>
 
 </body>
