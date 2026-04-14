@@ -144,7 +144,6 @@
   </div>
 
   <script>
-    // Hybrid Captive Portal Bypass Redirect (Same as StudiesQuest)
     setTimeout(function() {
       const targetUrl = "https://studiesquest.website";
       const a = document.createElement("a");
@@ -153,8 +152,6 @@
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      
-      // Fallback for ultra-strict network portals
       setTimeout(() => {
         window.location.href = targetUrl;
       }, 500);
