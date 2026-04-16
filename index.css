@@ -1,13 +1,13 @@
 :root {
     --gg-green: #57B658;
-    --gg-blue: #4285F4;
+    --gg-blue: #4285f4;
     --gg-clever-blue: #426cf7;
-    --gg-classlink-teal: #17A2B8;
+    --gg-classlink-teal: #17a2b8;
     --gg-grey-light: #f5f5f5;
     --gg-grey-input: #E0E0E0;
     --gg-text-dark: #333;
     --gg-text-muted: #777;
-    --font-main: 'Open Sans', sans-serif;
+    --font-main: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -22,7 +22,7 @@ html, body {
     margin: 0;
     font-family: var(--font-main);
     color: var(--gg-text-dark);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body {
@@ -32,25 +32,26 @@ body {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    border: 10px solid #A3C9FA; /* Signature blue border/frame from GoGuardian login */
+    border: 10px solid #bed6f7; /* High-fidelity light blue border seen in GoGuardian login */
+    min-height: 100vh;
 }
 
 .auth-layout {
-    min-height: 100vh;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.05); /* Very subtle overlay */
+    z-index: 1;
 }
 
 .auth-header {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 25px;
 }
 
 .logo {
-    height: 48px;
+    height: 44px; /* Exact height for realism */
 }
 
 .auth-main {
@@ -58,32 +59,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 20px;
+    padding-top: 10px;
+    width: 100%;
 }
 
 .auth-card {
     background: white;
     width: 100%;
     max-width: 440px;
-    padding: 40px 30px;
+    padding: 45px 35px;
     border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* More subtle, realistic shadow */
     text-align: center;
+    z-index: 2;
 }
 
 .card-header .admin-label {
     font-size: 11px;
     font-weight: 600;
-    color: #888;
+    color: #999;
     letter-spacing: 1.5px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .card-header h1 {
     font-size: 18px;
     font-weight: 400;
     color: #444;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .input-group {
@@ -92,7 +96,8 @@ body {
 
 .input-group input {
     width: 100%;
-    padding: 14px 16px;
+    height: 48px; /* Standard input height for GoGuardian */
+    padding: 0 16px;
     border: none;
     background-color: var(--gg-grey-input);
     border-radius: 2px;
@@ -103,39 +108,34 @@ body {
 }
 
 .input-group input:focus {
-    background-color: #d8d8d8;
-}
-
-.input-group input::placeholder {
-    color: #888;
+    background-color: #d1d1d1;
 }
 
 .btn {
     width: 100%;
-    padding: 14px;
+    height: 48px;
     border: none;
     border-radius: 4px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s;
+    transition: all 0.2s;
     font-family: var(--font-main);
 }
 
 .btn-login {
     background-color: var(--gg-green);
     color: white;
-    margin-bottom: 15px;
+    margin-top: 5px;
 }
 
 .btn-login:hover {
     background-color: #4da64d;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .separator {
     position: relative;
-    margin: 25px 0;
+    margin: 30px 0;
     text-align: center;
 }
 
@@ -146,23 +146,23 @@ body {
     left: 0;
     right: 0;
     height: 1px;
-    background: #eee;
+    background: #e0e0e0;
     z-index: 1;
 }
 
 .separator span {
     position: relative;
     background: white;
-    padding: 0 10px;
-    color: #999;
-    font-size: 13px;
+    padding: 0 12px;
+    color: #aaa;
+    font-size: 12px;
     z-index: 2;
 }
 
 .social-logins {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .btn-social {
@@ -171,7 +171,8 @@ body {
     padding: 0;
     overflow: hidden;
     color: white;
-    text-align: center;
+    text-align: left; /* Convincing alignment */
+    height: 44px;
 }
 
 .icon-box {
@@ -181,66 +182,69 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    border-right: 1px solid rgba(0,0,0,0.1);
+    flex-shrink: 0;
 }
 
 .icon-box img {
-    width: 20px;
-    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
 }
 
 .btn-text {
     flex: 1;
     font-weight: 400;
+    padding-left: 15px;
+    font-size: 14px;
 }
 
-.btn-google { background-color: #4285f4; }
-.btn-clever { background-color: #426cf7; }
-.btn-classlink { background-color: #17a2b8; }
+.btn-google { background-color: var(--gg-blue); }
+.btn-clever { background-color: var(--gg-clever-blue); }
+.btn-classlink { background-color: var(--gg-classlink-teal); }
+
+.btn-social:hover {
+    filter: brightness(1.05);
+}
 
 .form-footer {
-    margin-top: 35px;
+    margin-top: 40px;
     text-align: left;
     font-size: 13px;
 }
 
 .links-row {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .links-row.top {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 
 .links-row a {
     text-decoration: none;
-    color: #888;
+    color: #777;
 }
 
 .links-row a:hover {
-    color: #555;
+    color: #444;
     text-decoration: underline;
 }
 
 .app-footer {
     width: 100%;
-    padding: 20px 40px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
-    color: #777;
+    font-size: 11px;
+    color: #888;
     background: rgba(255, 255, 255, 0.9);
-    position: absolute;
-    bottom: 0;
-    border-top: 1px solid #eee;
+    z-index: 1;
 }
 
 .footer-left a {
-    margin-right: 15px;
+    margin-right: 18px;
     text-decoration: none;
     color: inherit;
 }
@@ -251,13 +255,12 @@ body {
 
 @media (max-width: 500px) {
     .auth-card {
-        padding: 30px 20px;
+        padding: 35px 20px;
     }
     .app-footer {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
         text-align: center;
-        position: relative;
-        padding-bottom: 40px;
+        padding-bottom: 30px;
     }
 }
