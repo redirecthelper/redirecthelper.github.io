@@ -1,5 +1,5 @@
 :root {
-    --gg-green: #5CB85C; /* Exact GoGuardian success green */
+    --gg-green: #5CB85C;
     --gg-blue-google: #4285F4;
     --gg-blue-clever: #187BD9;
     --gg-cyan-classlink: #26A0BB;
@@ -18,7 +18,7 @@ html, body {
     margin: 0;
     font-family: var(--font-main);
     color: #333;
-    overflow: hidden; /* Fix: No scrollbar on 100% */
+    overflow: hidden;
 }
 
 body {
@@ -28,7 +28,7 @@ body {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    border: 10px solid #bed6f7; /* High-fidelity frame */
+    /* Removed the "weird" thick blue border/frame */
 }
 
 .auth-layout {
@@ -36,15 +36,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: rgba(255, 255, 255, 0.05); /* Very subtle overlay */
 }
 
 .auth-header {
-    margin-top: 5vh;
-    margin-bottom: 2.5vh;
+    margin-top: 6vh;
+    margin-bottom: 25px;
 }
 
 .logo {
-    height: 34px; /* Pixel-perfect scale for full wordmark */
+    height: 48px; /* High-res wordmark height */
 }
 
 .auth-main {
@@ -58,15 +59,16 @@ body {
 .auth-card {
     background: white;
     width: 100%;
-    max-width: 480px; /* Fix: Not skinny anymore */
-    padding: 45px 50px;
+    max-width: 500px; /* Professional login card width */
+    padding: 50px 55px;
     border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1); /* Subtle, clean shadow */
+    border: none;
 }
 
 .card-header {
-    margin-bottom: 35px;
     text-align: center;
+    margin-bottom: 35px;
 }
 
 .card-header .admin-label {
@@ -108,7 +110,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
-    font-family: var(--font-main);
+    outline: none; /* Fix: No blue/black focus boxes */
 }
 
 .btn-login {
@@ -150,21 +152,20 @@ body {
 .btn-social {
     display: flex;
     align-items: center;
-    padding: 0; /* Critical: No padding on the button itself */
+    padding: 0;
     overflow: hidden;
     color: white;
     height: 44px;
 }
 
 .icon-box {
-    background: white; 
-    width: 44px; /* Perfect square */
+    background: white;
+    width: 44px;
     height: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    border-right: 1px solid rgba(0,0,0,0.1); /* Vertical separator */
 }
 
 .icon-box img {
@@ -177,16 +178,12 @@ body {
     font-weight: 400;
     text-align: center;
     font-size: 14px;
-    padding-right: 44px; /* Balanced centering */
+    padding-right: 44px; /* Centering helper */
 }
 
 .btn-google { background-color: var(--gg-blue-google); }
 .btn-clever { background-color: var(--gg-blue-clever); }
 .btn-classlink { background-color: var(--gg-cyan-classlink); }
-
-.btn-social:hover {
-    filter: brightness(1.05);
-}
 
 .form-footer {
     margin-top: 40px;
@@ -232,6 +229,6 @@ body {
 }
 
 @media (max-height: 850px) {
-    .auth-header { margin-top: 2vh; }
-    .auth-card { padding: 35px 50px; }
+    .auth-header { margin-top: 3vh; }
+    .auth-card { padding: 35px 55px; }
 }
