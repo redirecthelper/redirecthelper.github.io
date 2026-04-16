@@ -32,7 +32,7 @@ body {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    border: 10px solid #bed6f7; /* High-fidelity light blue border seen in GoGuardian login */
+    border: 10px solid #bed6f7; /* High-fidelity light blue frame */
     min-height: 100vh;
 }
 
@@ -46,12 +46,12 @@ body {
 }
 
 .auth-header {
-    margin-top: 30px;
-    margin-bottom: 25px;
+    margin-top: 40px;
+    margin-bottom: 30px;
 }
 
 .logo {
-    height: 44px; /* Exact height for realism */
+    height: 32px; /* Adjusted for the new full wordmark logo realism */
 }
 
 .auth-main {
@@ -60,7 +60,6 @@ body {
     justify-content: center;
     align-items: flex-start;
     padding-top: 10px;
-    width: 100%;
 }
 
 .auth-card {
@@ -69,9 +68,8 @@ body {
     max-width: 440px;
     padding: 45px 35px;
     border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* More subtle, realistic shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
-    z-index: 2;
 }
 
 .card-header .admin-label {
@@ -96,15 +94,13 @@ body {
 
 .input-group input {
     width: 100%;
-    height: 48px; /* Standard input height for GoGuardian */
+    height: 48px;
     padding: 0 16px;
     border: none;
     background-color: var(--gg-grey-input);
     border-radius: 2px;
     font-size: 14px;
-    font-family: var(--font-main);
     outline: none;
-    transition: background 0.2s;
 }
 
 .input-group input:focus {
@@ -147,7 +143,6 @@ body {
     right: 0;
     height: 1px;
     background: #e0e0e0;
-    z-index: 1;
 }
 
 .separator span {
@@ -171,7 +166,6 @@ body {
     padding: 0;
     overflow: hidden;
     color: white;
-    text-align: left; /* Convincing alignment */
     height: 44px;
 }
 
@@ -183,17 +177,18 @@ body {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+    border-right: 1px solid rgba(0,0,0,0.1);
 }
 
 .icon-box img {
-    max-width: 20px;
-    max-height: 20px;
+    max-width: 22px;
+    max-height: 22px;
 }
 
 .btn-text {
     flex: 1;
     font-weight: 400;
-    padding-left: 15px;
+    text-align: center;
     font-size: 14px;
 }
 
@@ -212,18 +207,17 @@ body {
 }
 
 .links-row {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .links-row.top {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
 }
 
 .links-row a {
     text-decoration: none;
-    color: #777;
+    color: #888;
 }
 
 .links-row a:hover {
@@ -239,8 +233,7 @@ body {
     align-items: center;
     font-size: 11px;
     color: #888;
-    background: rgba(255, 255, 255, 0.9);
-    z-index: 1;
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .footer-left a {
@@ -249,18 +242,13 @@ body {
     color: inherit;
 }
 
-.footer-left a:hover {
-    text-decoration: underline;
-}
-
 @media (max-width: 500px) {
     .auth-card {
         padding: 35px 20px;
     }
     .app-footer {
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
         text-align: center;
-        padding-bottom: 30px;
     }
 }
