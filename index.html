@@ -2,160 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
-  <meta http-equiv="refresh" content="4;url=https://studiesquest.website">
+  <title>Classes</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      min-height: 100vh;
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: #020a04;
-      font-family: 'Inter', sans-serif;
-      overflow: hidden;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
-    /* Animated background glow */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 50%; left: 50%;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(0,230,118,0.12) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      animation: pulseGlow 3s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
-      50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.15); }
-    }
-
-    .redirect-card {
+    .launcher {
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 40px;
       text-align: center;
-      padding: 48px 40px;
-      border-radius: 20px;
-      background: rgba(10, 30, 16, 0.85);
-      border: 1px solid rgba(0, 230, 118, 0.15);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.5),
-        0 0 80px rgba(0, 230, 118, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
-      max-width: 420px;
+      box-shadow: 0 10px 40px rgba(0,230,118,0.1);
+      max-width: 400px;
       width: 90%;
-      animation: cardIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    @keyframes cardIn {
-      from { opacity: 0; transform: translateY(20px) scale(0.96); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    .brand {
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      background: linear-gradient(135deg, #00e676, #00bfa5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 28px;
-    }
-
-    .spinner-ring {
-      width: 48px; height: 48px;
-      margin: 0 auto 24px;
-      border: 3px solid rgba(0, 230, 118, 0.12);
-      border-top-color: #00e676;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    h1 {
-      font-size: 22px;
-      font-weight: 600;
-      color: #e8f5e9;
-      margin-bottom: 10px;
-      letter-spacing: -0.3px;
-    }
-
-    p {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.45);
-      line-height: 1.6;
-      margin-bottom: 28px;
-    }
-
-    p a {
+    .launcher h1 {
+      margin: 0 0 10px;
+      font-size: 24px;
       color: #00e676;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s;
     }
-
-    p a:hover {
-      color: #69f0ae;
-      text-decoration: underline;
+    .launcher p {
+      margin: 0 0 30px;
+      color: #888;
+      font-size: 14px;
+      line-height: 1.5;
     }
-
-    .progress-bar {
+    button {
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      background: #00e676;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,230,118,0.3);
+      transition: all 0.2s;
       width: 100%;
-      height: 3px;
-      background: rgba(0, 230, 118, 0.1);
-      border-radius: 3px;
-      overflow: hidden;
     }
-
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #00e676, #00bfa5);
-      border-radius: 3px;
-      animation: fillBar 2s ease-in-out forwards;
-    }
-
-    @keyframes fillBar {
-      from { width: 0%; }
-      to { width: 100%; }
+    button:hover {
+      background: #00bfa5;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,230,118,0.4);
     }
   </style>
 </head>
 <body>
-  <div class="redirect-card">
-    <div class="brand">StudiesQuest</div>
-    <div class="spinner-ring"></div>
-    <h1>Redirecting...</h1>
-    <p>You're being sent to the new site.<br>If nothing happens, <a href="https://studiesquest.website" id="manual-link">click here</a>.</p>
-    <div class="progress-bar">
-      <div class="progress-fill"></div>
-    </div>
+
+  <div class="launcher" id="launcher">
+    <h1>Initialize Proxy</h1>
+    <p>Click below to launch the proxy in a secure, hidden about:blank tab that won't show up in your school browser history.</p>
+    <button onclick="launchProxy()">Launch Secure Session</button>
   </div>
 
   <script>
-    setTimeout(function() {
-      const targetUrl = "https://studiesquest.website";
-      const a = document.createElement("a");
-      a.href = targetUrl;
-      a.target = "_blank";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      setTimeout(() => {
-        window.location.href = targetUrl;
-      }, 500);
-    }, 2000);
+
+    const TARGET_URL = "https://proxyhelper.proxyhelper.workers.dev";
+
+    function launchProxy() {
+
+      let win = window.open('about:blank', '_blank');
+      
+      if (!win || win.closed || typeof win.closed === 'undefined') {
+        alert("Your browser blocked the pop-up! Please click the icon in the URL bar to allow pop-ups and try again.");
+        return;
+      }
+
+      document.getElementById('launcher').innerHTML = "<h2 style='color:#00e676; margin-bottom: 10px;'>Session Active</h2><p style='color:#888;'>The proxy is running in a hidden tab. You can safely close this page now to hide your tracks.</p>";
+      win.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>My Drive - Google Drive</title>
+          <link rel="icon" href="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png">
+          <style>
+            body, html { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; background: #000; }
+            iframe { width: 100vw; height: 100vh; border: none; }
+          </style>
+        </head>
+        <body>
+          <iframe id="sqFrame" src="${TARGET_URL}" allow="autoplay; fullscreen; cursor-lock"></iframe>
+        </body>
+        </html>
+      `);
+      win.document.close();
+    }
   </script>
 </body>
 </html>
