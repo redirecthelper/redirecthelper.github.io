@@ -76,11 +76,24 @@
       let win = window.open('about:blank', '_blank');
       
       if (!win || win.closed || typeof win.closed === 'undefined') {
-        alert("Your browser blocked the pop-up! Please click the icon in the URL bar to allow pop-ups and try again.");
+        const btn = document.querySelector('button');
+        const p = document.querySelector('.launcher p');
+        
+     
+        p.style.color = "#ff5252";
+        p.innerText = "Stealth Cloaking is blocked on this screen. Redirecting you directly to the proxy in 3 seconds...";
+        btn.innerText = "Launching Without Cloak...";
+        btn.style.background = "#ff5252";
+        
+        setTimeout(() => {
+          window.location.href = TARGET_URL;
+        }, 3000);
         return;
       }
 
+
       document.getElementById('launcher').innerHTML = "<h2 style='color:#00e676; margin-bottom: 10px;'>Session Active</h2><p style='color:#888;'>The proxy is running in a hidden tab. You can safely close this page now to hide your tracks.</p>";
+
       win.document.write(`
         <!DOCTYPE html>
         <html>
