@@ -1,12 +1,11 @@
 :root {
-    --gg-green: #57B658;
-    --gg-blue: #4285f4;
-    --gg-clever-blue: #426cf7;
-    --gg-classlink-teal: #17a2b8;
-    --gg-grey-light: #f5f5f5;
+    --gg-green: #5CB85C; /* Exact GoGuardian success green */
+    --gg-blue-google: #4285F4;
+    --gg-blue-clever: #187BD9;
+    --gg-cyan-classlink: #26A0BB;
+    --gg-bg-light: #f5f5f5;
     --gg-grey-input: #E0E0E0;
     --gg-text-dark: #333;
-    --gg-text-muted: #777;
     --font-main: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -22,7 +21,7 @@ html, body {
     margin: 0;
     font-family: var(--font-main);
     color: var(--gg-text-dark);
-    overflow: hidden; /* Prevent scrolling at 100% zoom */
+    overflow: hidden; /* Fix: Not supposed to be scrollable */
 }
 
 body {
@@ -32,25 +31,23 @@ body {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    border: 10px solid #bed6f7; /* Signature GoGuardian blue border */
+    border: 10px solid #bed6f7; /* Signature light blue frame */
 }
 
 .auth-layout {
-    height: 100%; /* Fill the viewport height */
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0;
-    justify-content: flex-start;
 }
 
 .auth-header {
-    margin-top: 3.5vh; /* Responsive margin to keep things in view */
-    margin-bottom: 2vh;
+    margin-top: 4vh;
+    margin-bottom: 2.5vh;
 }
 
 .logo {
-    height: 38px; /* High fidelity height */
+    height: 34px; /* Pixel-perfect scale for full wordmark */
 }
 
 .auth-main {
@@ -59,16 +56,15 @@ body {
     justify-content: center;
     align-items: flex-start;
     width: 100%;
-    padding-top: 1vh;
 }
 
 .auth-card {
     background: white;
     width: 100%;
-    max-width: 480px; /* Increased from 440px to fix "too skinny" issue */
-    padding: 40px 48px; /* Adjusted padding for better internal layout */
+    max-width: 480px; /* Fix: Not skinny anymore */
+    padding: 45px 50px;
     border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
 }
 
@@ -77,7 +73,7 @@ body {
     font-weight: 600;
     color: #999;
     letter-spacing: 1.5px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     text-transform: uppercase;
 }
 
@@ -85,11 +81,11 @@ body {
     font-size: 18px;
     font-weight: 400;
     color: #444;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .input-group {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .input-group input {
@@ -100,6 +96,7 @@ body {
     background-color: var(--gg-grey-input);
     border-radius: 2px;
     font-size: 14px;
+    font-family: var(--font-main);
     outline: none;
 }
 
@@ -112,6 +109,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
+    font-family: var(--font-main);
 }
 
 .btn-login {
@@ -120,9 +118,13 @@ body {
     margin-top: 5px;
 }
 
+.btn-login:hover {
+    background-color: #4cae4c;
+}
+
 .separator {
     position: relative;
-    margin: 25px 0;
+    margin: 30px 0;
     text-align: center;
 }
 
@@ -148,7 +150,7 @@ body {
 .social-logins {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .btn-social {
@@ -157,18 +159,23 @@ body {
     padding: 0;
     overflow: hidden;
     color: white;
-    height: 44px;
+    height: 44px; /* Precise height */
 }
 
 .icon-box {
     background: white;
-    width: 44px;
+    width: 44px; /* Perfect square */
     height: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    border-right: 1px solid rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(0,0,0,0.1); /* Vertical separator */
+}
+
+.icon-box img {
+    max-width: 24px;
+    max-height: 24px;
 }
 
 .btn-text {
@@ -178,18 +185,22 @@ body {
     font-size: 14px;
 }
 
-.btn-google { background-color: var(--gg-blue); }
-.btn-clever { background-color: #4249F5; }
-.btn-classlink { background-color: var(--gg-classlink-teal); }
+.btn-google { background-color: var(--gg-blue-google); }
+.btn-clever { background-color: var(--gg-blue-clever); }
+.btn-classlink { background-color: var(--gg-cyan-classlink); }
+
+.btn-social:hover {
+    filter: brightness(1.05);
+}
 
 .form-footer {
-    margin-top: 35px;
+    margin-top: 40px;
     text-align: left;
     font-size: 13px;
 }
 
 .links-row {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .links-row.top {
@@ -209,7 +220,7 @@ body {
 
 .app-footer {
     width: 100%;
-    padding: 12px 40px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -220,13 +231,13 @@ body {
 }
 
 .footer-left a {
-    margin-right: 18px;
+    margin-right: 20px;
     text-decoration: none;
     color: inherit;
 }
 
-@media (max-height: 800px) {
-    .auth-header { margin-top: 1vh; }
-    .auth-card { padding: 30px 48px; }
-    .form-footer { margin-top: 25px; }
+@media (max-height: 850px) {
+    .auth-header { margin-top: 2vh; }
+    .auth-card { padding: 35px 50px; }
+    .form-footer { margin-top: 30px; }
 }
